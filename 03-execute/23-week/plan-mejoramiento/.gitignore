@@ -1,0 +1,25 @@
+# Secretos: solo se versiona .env.example
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+vendor/
+
+# Builds y cachés
+dist/
+build/
+.vite/
+.phpunit.result.cache
+.phpunit.cache/
+storage/*.key
+
+# Fotos subidas en local
+var/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
