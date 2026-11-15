@@ -1,0 +1,158 @@
+/* Camping Rental — public site. Mobile first, no external dependencies. */
+:root {
+  --color-forest: #2f5d46;
+  --color-forest-dark: #1f3f30;
+  --color-sand: #f4efe6;
+  --color-ember: #d9772b;
+  --color-text: #22302a;
+  --color-muted: #5b6b63;
+  --color-white: #ffffff;
+  --radius: 12px;
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  background: var(--color-white);
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
+p { margin: 0 0 1rem; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-forest-dark);
+}
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.brand {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+.main-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+.main-nav a { color: #d7e6dc; text-decoration: none; font-size: 0.95rem; }
+.main-nav a:hover, .main-nav a:focus { color: var(--color-white); text-decoration: underline; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--color-forest) 0%, var(--color-forest-dark) 100%);
+  color: var(--color-white);
+  padding: 4rem 0 4.5rem;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #f3c79f;
+}
+.hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); max-width: 18ch; }
+.lead { font-size: 1.1rem; max-width: 55ch; color: #e3eee7; }
+
+.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  background: var(--color-ember);
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+.button:hover, .button:focus { background: #bf6420; }
+
+/* Sections */
+.section { padding: 3.5rem 0; }
+.section.alt { background: var(--color-sand); }
+.section h2 { font-size: 1.75rem; color: var(--color-forest-dark); }
+
+.two-cols { display: grid; gap: 2rem; }
+
+.categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-content: flex-start;
+}
+.categories li {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-forest);
+  color: var(--color-forest-dark);
+  font-weight: 600;
+}
+
+.cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border-top: 4px solid var(--color-ember);
+}
+.card h3 { font-size: 1.1rem; color: var(--color-forest-dark); }
+.card p { color: var(--color-muted); margin: 0; }
+
+.steps { padding-left: 1.25rem; display: grid; gap: 0.75rem; max-width: 60ch; }
+
+.rules { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+.rule p { margin: 0; }
+.rule-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-ember);
+  min-width: 2ch;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-forest-dark);
+  color: #c9d8ce;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.site-footer p { margin: 0; }
+
+/* Tablet and desktop */
+@media (min-width: 700px) {
+  .two-cols { grid-template-columns: 3fr 2fr; align-items: start; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .rules { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1000px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
