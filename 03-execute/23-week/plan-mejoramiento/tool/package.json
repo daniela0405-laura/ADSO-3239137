@@ -1,0 +1,13 @@
+{
+  "name": "camping-rental-seed",
+  "version": "1.0.0",
+  "description": "Loads demo data into Camping Rental through the API (T-21).",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "seed": "node seed.mjs"
+  }
+}
