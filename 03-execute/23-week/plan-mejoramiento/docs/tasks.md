@@ -36,6 +36,29 @@ requisitos no funcionales, todos los endpoints del contrato y **15 o más archiv
 
 ## Seguimiento
 
-| Tarea | Estado | Commit / evidencia |
+| Tarea | Estado | Evidencia en el repositorio |
 |---|---|---|
-| T-01 … T-23 | pendiente | se actualiza en cada entrega |
+| T-01 Esqueleto y `/health` | hecha | `api/routes/api.php`, `api/tests/Feature/HealthTest.php` |
+| T-02 Migración inicial | hecha | `api/database/migrations/2026_11_12_000001_create_initial_schema.php` |
+| T-03 Objetos de valor | hecha | `api/app/Domain/ValueObjects`, `api/tests/Unit/Domain/*Test.php` |
+| T-04 … T-18 | pendiente | — |
+| T-19 Pruebas de arquitectura | parcial | `api/tests/Architecture/LayerDependencyTest.php` (artículos I y II) |
+| T-20 `infra` | hecha | `infra/docker-compose.yml` con `db`, `api` y `app` |
+| T-21 `tool` | parcial | `tool/seed.mjs`; los vencidos dependen del paso del tiempo |
+| T-22 `app` | parcial | Login, catálogo, alquilar, vencidos y reporte; `app/tests/*.test.jsx` |
+| T-23 `page` | hecha | `page/index.html`, `page/styles.css` |
+
+### Archivos de pruebas automatizadas
+
+| # | Archivo | Qué prueba |
+|---|---|---|
+| 1 | `api/tests/Feature/HealthTest.php` | `/health` público |
+| 2 | `api/tests/Unit/Domain/ItemReferenceTest.php` | Formato `AAA-0000` |
+| 3 | `api/tests/Unit/Domain/QuantityTest.php` | Unidades ≥ 1 |
+| 4 | `api/tests/Unit/Domain/DocumentNumberTest.php` | Documento solo numérico |
+| 5 | `api/tests/Unit/Domain/DateRangeTest.php` | Rango de fechas del reporte |
+| 6 | `api/tests/Architecture/LayerDependencyTest.php` | Dominio y aplicación sin dependencias prohibidas |
+| 7 | `app/tests/LoginPage.test.jsx` | Validación y mensaje de error del login |
+| 8 | `app/tests/RentalFormPage.test.jsx` | Máximo 4 artículos y sin repetidos |
+
+Meta del acta: 15 o más archivos. **Faltan 7.**
