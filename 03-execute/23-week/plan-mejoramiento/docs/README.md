@@ -14,3 +14,7 @@ Se lee en este orden:
    - [ADR-002](adr/adr-002-optimistic-concurrency.md) · Concurrencia optimista
    - [ADR-003](adr/adr-003-frozen-report.md) · Reporte con valores congelados
    - [ADR-004](adr/adr-004-soft-delete.md) · Baja lógica
+
+## Estado
+
+El avance por tarea y la lista de archivos de pruebas están en la sección *Seguimiento* de [`tasks.md`](tasks.md).
