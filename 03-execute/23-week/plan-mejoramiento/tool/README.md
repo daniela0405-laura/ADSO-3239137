@@ -35,6 +35,12 @@ set ADMIN_PASSWORD=tu_clave
 node seed.mjs
 ```
 
+## Revisar la sintaxis sin la API
+
+```bash
+npm run check
+```
+
 ## Notas
 
 - Es **idempotente a medias**: si un artículo, cliente o asesor ya existe (409), lo informa y sigue.

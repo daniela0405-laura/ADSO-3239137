@@ -8,6 +8,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "seed": "node seed.mjs"
+    "seed": "node seed.mjs",
+    "check": "node --check seed.mjs"
   }
 }
