@@ -49,6 +49,18 @@ services:
         condition: service_healthy
     networks: [camping]
 
+  app:
+    build:
+      context: ../app
+      dockerfile: ../infra/app.Dockerfile
+    environment:
+      VITE_API_URL: http://localhost:8000/api/v1
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    networks: [camping]
+
 volumes:
   db-data:
 
