@@ -45,7 +45,7 @@ requisitos no funcionales, todos los endpoints del contrato y **15 o más archiv
 | T-19 Pruebas de arquitectura | parcial | `api/tests/Architecture/LayerDependencyTest.php` (artículos I y II) |
 | T-20 `infra` | hecha | `infra/docker-compose.yml` con `db`, `api` y `app` |
 | T-21 `tool` | parcial | `tool/seed.mjs`; los vencidos dependen del paso del tiempo |
-| T-22 `app` | parcial | Login, catálogo, alquilar, vencidos y reporte; `app/tests/*.test.jsx` |
+| T-22 `app` | parcial | Login, catálogo, alquilar, vencidos y reporte; 9 archivos en `app/tests` |
 | T-23 `page` | hecha | `page/index.html`, `page/styles.css` |
 
 ### Archivos de pruebas automatizadas
@@ -60,5 +60,15 @@ requisitos no funcionales, todos los endpoints del contrato y **15 o más archiv
 | 6 | `api/tests/Architecture/LayerDependencyTest.php` | Dominio y aplicación sin dependencias prohibidas |
 | 7 | `app/tests/LoginPage.test.jsx` | Validación y mensaje de error del login |
 | 8 | `app/tests/RentalFormPage.test.jsx` | Máximo 4 artículos y sin repetidos |
+| 9 | `app/tests/client.test.js` | Token, cuerpo de error único, sin conexión y 204 |
+| 10 | `app/tests/ErrorMessage.test.jsx` | Mensaje de error accesible |
+| 11 | `app/tests/ProtectedRoute.test.jsx` | Sin sesión → login; rol insuficiente bloqueado |
+| 12 | `app/tests/AuthContext.test.jsx` | Usuario normalizado, guardar y cerrar sesión |
+| 13 | `app/tests/ReportPage.test.jsx` | Rango invertido (CA-10.2), filas y rango vacío |
+| 14 | `app/tests/ItemsPage.test.jsx` | Disponibles de total y mensaje de error |
+| 15 | `app/tests/OverduePage.test.jsx` | Días de retraso y lista vacía |
 
-Meta del acta: 15 o más archivos. **Faltan 7.**
+Meta del acta: 15 o más archivos. **Cumplida: 15.**
+
+Cómo correrlas: en `app`, `npm install` y `npm test` (21 pruebas, Vitest); en `api`, `composer install` y
+`php artisan test` (Pest).
