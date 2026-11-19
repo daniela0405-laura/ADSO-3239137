@@ -156,3 +156,16 @@ p { margin: 0 0 1rem; }
 @media (min-width: 1000px) {
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Accessibility: skip link and visible focus */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--color-ember);
+  color: var(--color-white);
+  z-index: 20;
+}
+.skip-link:focus { left: 1rem; }
+a:focus-visible, .button:focus-visible { outline: 3px solid #f3c79f; outline-offset: 2px; }
